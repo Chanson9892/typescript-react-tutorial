@@ -4,27 +4,28 @@
 //     draw: () => void
 // }
 
-class Point{ // x, y are fields for storing data, draw is a function
+class Point{ // bundles the data and methods together.
     x: number
     y: number
+
     draw() {
-        //.....
+        console.log('X: ' + this.x + ', Y: ' + this.y)
     }
     getDistance(another: Point){ // when function is part of a class we call it a method.
         // ...
     }
 }
 
-let drawPoint = (point: Point) => { // can run into problem with too many parameters. encapsulate them into object
-    //.... 
-}
+// let drawPoint = (point: Point) => { // can run into problem with too many parameters. encapsulate them into object
+//     //.... 
+// }
 
-let getDistance = (pointA: Point, pointB: Point) => {
-    // .....
-}
+// let getDistance = (pointA: Point, pointB: Point) => {
+//     // .....
+// }
 
-drawPoint({
-    x: 2,
-    y: 5
-})
+let point = new Point() // will make a new instance and infers it is a Point object
 
+point.x = 1
+point.y = 2
+point.draw() // not a function hanging in the air
