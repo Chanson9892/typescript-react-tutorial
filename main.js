@@ -11,8 +11,22 @@ var Point = /** @class */ (function () {
     Point.prototype.draw = function () {
         console.log('X: ' + this.x + ', Y: ' + this.y);
     };
+    Point.prototype.getX = function () {
+        return this.x;
+    };
+    Point.prototype.setX = function (value) {
+        if (value < 0) {
+            throw new Error('value cannot be less than 0');
+        }
+        this.x = value;
+    };
     return Point;
 }());
+var point = new Point(1, 2);
+var x = point.getX();
+point.setX(3);
+point.draw();
+//////////////////
 // class Point{ // bundles the data and methods together.
 //     private x: number // private makes it not able to be changed
 //     private y: number // private makes it not able to be changed
@@ -27,7 +41,7 @@ var Point = /** @class */ (function () {
 // let drawPoint = (point: Point) => { // can run into problem with too many parameters. encapsulate them into object
 //     //.... 
 // }
-var point = new Point(1, 2); // will make a new instance and infers it is a Point object
-// point.x = 1
-// point.y = 2
-point.draw();
+// let point = new Point(1,2) // will make a new instance and infers it is a Point object
+// // point.x = 1
+// // point.y = 2
+// point.draw() 
